@@ -134,7 +134,7 @@ def get_fyers_model() -> fyersModel.FyersModel:
                 token=access_token,
                 is_async=False,
                 client_id=os.getenv("CLIENT_ID"),
-                log_path="./logs"
+                log_path=f'{base}/logs'
             )
 
         return _instance
