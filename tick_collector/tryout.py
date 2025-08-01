@@ -1,6 +1,7 @@
 from pprint import pprint
 
-from broker.fyers import FyersBroker
+from broker.base import AbstractBroker
+from broker.factory import get_broker
 
-broker = FyersBroker()
+broker: AbstractBroker = get_broker('fyers')
 pprint(broker.get_profile())
