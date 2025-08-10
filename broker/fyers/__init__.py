@@ -1,3 +1,4 @@
+from typing import List
 from broker.base import AbstractBroker
 from .config import get_fyers_data_socket, init_broker, get_fyers_model
 
@@ -6,11 +7,12 @@ class FyersBroker(AbstractBroker):
     def __init__(self):
         init_broker()
 
-    def stream_ticker(self, symbol, **kwargs):
+    def stream_ticker(self, symbols: List[str], **kwargs):
         ws = get_fyers_data_socket(**kwargs)
         ws.connect()
-        ws.subscribe(symbols=[symbol], data_type='SymbolUpdate')
+        ws.subscribe(symbols=symbols, data_type='SymbolUpdate')
         ws.keep_running()
+        return ws
 
     def place_trade(self, trade):
         pass

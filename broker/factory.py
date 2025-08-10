@@ -5,6 +5,7 @@ BROKER_MAP = {
     "fyers": FyersBroker,
 }
 
+
 def get_broker(broker_name: str) -> AbstractBroker:
     if broker_name not in BROKER_MAP:
         raise ValueError(f"Broker '{broker_name}' not supported")

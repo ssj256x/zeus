@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
-
+from typing import List
 
 class AbstractBroker(ABC):
     @abstractmethod
-    def stream_ticker(self, symbol: str, **kwargs):
+    def stream_ticker(self, symbol: List[str], **kwargs):
         pass
 
     @abstractmethod

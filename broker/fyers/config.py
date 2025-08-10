@@ -111,7 +111,7 @@ def get_fyers_data_socket(**kwargs):
         if _instance is None:
             _instance = data_ws.FyersDataSocket(
                 access_token=access_token,
-                log_path=kwargs.get('log_path', './logs'),
+                log_path=kwargs.get('log_path', f'./ticks/'),
                 litemode=kwargs.get('litemode', False),
                 write_to_file=kwargs.get('write_to_file', False),
                 on_connect=kwargs['on_connect'],
